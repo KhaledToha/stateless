@@ -45,6 +45,15 @@
              |<--------------------------------------------|
              |                                              |
 
+graph TD;
+    A[Client] -->|Step 1: Authentication (Sending Credentials)| B[Server];
+    B -->|Step 2: Authentication (Generating JWT Token)| C[Server];
+    C -->|Step 3: Token Response| A;
+    C -->|Step 4: Token Storage| A;
+    A -->|Step 5: Subsequent Requests (Including JWT Token)| B;
+    B -->|Step 6: Token Verification| B;
+    B -->|Step 7: Response| A;
+
 
 ## advantages and disadvantages: 
 
